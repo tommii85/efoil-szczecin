@@ -270,6 +270,23 @@ body.has-config-alert .hero {
   transform: scaleX(1);
   transform-origin: left;
 }
+.desktop-nav .nav-partner-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--acid);
+}
+
+.desktop-nav .nav-partner-link span {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.site-header.is-scrolled .desktop-nav .nav-partner-link,
+.site-header.is-menu-open .desktop-nav .nav-partner-link {
+  color: var(--teal-dark);
+}
+
 
 .button {
   display: inline-flex;
@@ -2245,6 +2262,16 @@ h2 em {
     font-size: 9px;
     letter-spacing: 0.1em;
   }
+  .mobile-nav > .nav-partner-link:not(.button) {
+    color: var(--teal-dark);
+  }
+
+  .mobile-nav > .nav-partner-link:not(.button) span {
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
 
   .mobile-nav .button {
     margin-top: 28px;
