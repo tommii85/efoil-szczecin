@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#071d24">
+    <meta
+      name="description"
+      content="Wynajem eFoil Waydoo Flyer EVO w Szczecinie. Wynajem na dzień, weekend lub tydzień, instruktaż i możliwość dowozu w okolice Zalewu Szczecińskiego."
+    >
+    <meta
+      name="keywords"
+      content="wynajem efoil Szczecin, efoil Szczecin, Waydoo wynajem, efoil Jezioro Dąbie, efoil Zalew Szczeciński"
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:title" content="Wynajem eFoil Szczecin">
+    <meta
+      property="og:description"
+      content="Poczuj lot nad wodą. Waydoo Flyer EVO na dzień, weekend lub cały tydzień."
+    >
+    <meta property="og:image" content="hero-efoil.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Wynajem eFoil Szczecin | Waydoo Flyer EVO</title>
+
+    <link rel="preload" href="hero-efoil.webp" as="image" type="image/webp">
+    <link rel="stylesheet" href="styles.css">
+    <script src="config.js" defer></script>
+    <script src="script.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Wynajem eFoil w Szczecinie",
+        "serviceType": "Wynajem elektrycznej deski hydrofoil",
+        "description": "Wynajem eFoil na dzień, weekend lub tydzień z instruktażem i możliwością dowozu.",
+        "areaServed": [
+          "Szczecin",
+          "Jezioro Dąbie",
+          "Zalew Szczeciński",
+          "Stepnica",
+          "Trzebież",
+          "Nowe Warpno",
+          "Świnoujście",
+          "Międzyzdroje"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Przejdź do treści</a>
+
+    <div class="config-alert" id="config-alert" role="status" hidden>
+      <div class="shell config-alert__inner">
+        <span aria-hidden="true">●</span>
+        <strong>Przed publikacją:</strong>
+        uzupełnij telefon i e-mail w pliku <code>config.js</code>.
+      </div>
+    </div>
+
+    <header class="site-header" id="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="#start" aria-label="eFoil Szczecin — strona główna">
+          <span class="brand-mark" aria-hidden="true"><i></i></span>
+          <span class="brand-text">
+            <strong data-brand-name>eFoil Szczecin</strong>
+            <small>rent · ride · fly</small>
+          </span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Główna nawigacja">
+          <a href="#wynajem">Sprzęt</a>
+          <a href="#jak-to-dziala">Jak to działa</a>
+          <a href="#cennik">Cennik</a>
+          <a href="#lokalizacje">Gdzie pływamy</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <a class="button button--small header-cta" href="#rezerwacja">
+          Sprawdź termin
+          <span aria-hidden="true">↗</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          aria-label="Otwórz menu"
+        >
+          <span></span><span></span>
+        </button>
+      </div>
+
+      <nav class="mobile-nav" id="mobile-nav" aria-label="Menu mobilne" hidden>
+        <a href="#wynajem">Sprzęt <span>01</span></a>
+        <a href="#jak-to-dziala">Jak to działa <span>02</span></a>
+        <a href="#cennik">Cennik <span>03</span></a>
+        <a href="#lokalizacje">Gdzie pływamy <span>04</span></a>
+        <a href="#bezpieczenstwo">Bezpieczeństwo <span>05</span></a>
+        <a href="#faq">FAQ <span>06</span></a>
+        <a class="button" href="#rezerwacja">Sprawdź termin</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="start" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true">
+          <img
+            src="hero-efoil.webp"
+            alt=""
+            width="1823"
+            height="863"
+            fetchpriority="high"
+          >
+        </div>
+        <div class="hero-shade" aria-hidden="true"></div>
+
+        <div class="shell hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow eyebrow--light">
+              <span></span>
+              Wynajem eFoil · Szczecin i okolice
+            </p>
+            <h1 id="hero-title">
+              Leć nad
+              <em>wodą.</em>
+            </h1>
+            <p class="hero-lead">
+              Waydoo Flyer EVO na jeden dzień, weekend albo cały tydzień.
+              Odbierz deskę w Szczecinie lub zamów dowóz nad wodę.
+            </p>
+            <div class="hero-actions">
+              <a class="button button--accent" href="#rezerwacja">
+                Sprawdź wolny termin
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a class="text-link text-link--light" href="#jak-to-dziala">
+                Zobacz, jak wygląda wynajem
+                <span aria-hidden="true">↓</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-note">
+            <span class="hero-note__index">01</span>
+            <p>Bez wiatru.<br>Bez fal.<br><strong>Czysty lot.</strong></p>
+          </div>
+        </div>
+
+        <div class="hero-specs">
+          <div class="shell hero-specs__grid">
+            <div>
+              <span class="spec-label">Deska</span>
+              <strong>Waydoo Flyer EVO Lite</strong>
+            </div>
+            <div>
+              <span class="spec-label">Napęd</span>
+              <strong>4 kW · elektryczny</strong>
+            </div>
+            <div>
+              <span class="spec-label">W zestawie</span>
+              <strong>Kask · kamizelka · instruktaż</strong>
+            </div>
+            <div>
+              <span class="spec-label">Wynajem</span>
+              <strong>1–7 dni</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro section" id="wynajem">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <p class="eyebrow"><span></span> Nowy wymiar wody</p>
+            <div class="section-heading__grid">
+              <h2>Nie płyniesz.<br><em>Unosisz się.</em></h2>
+              <div>
+                <p class="lead">
+                  eFoil to elektryczna deska z hydroskrzydłem. Gdy nabierasz
+                  prędkości, deska odrywa się od tafli i sunie niemal bezgłośnie
+                  nad wodą.
+                </p>
+                <p>
+                  Nie potrzebujesz fali ani wiatru. Sterujesz bezprzewodowym
+                  pilotem, a tempo dopasowujesz do swoich umiejętności.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="benefit-grid">
+            <article class="benefit-card reveal">
+              <span class="card-number">01</span>
+              <div class="benefit-icon benefit-icon--wave" aria-hidden="true"></div>
+              <h3>Lot zamiast ślizgu</h3>
+              <p>Hydroskrzydło unosi deskę ponad taflę i daje wyjątkowo płynne wrażenie jazdy.</p>
+            </article>
+            <article class="benefit-card reveal">
+              <span class="card-number">02</span>
+              <div class="benefit-icon benefit-icon--bolt" aria-hidden="true"></div>
+              <h3>Cicho i elektrycznie</h3>
+              <p>Zero paliwa i spalin. Zostaje szum wody, równowaga i pełne skupienie.</p>
+            </article>
+            <article class="benefit-card benefit-card--dark reveal">
+              <span class="card-number">03</span>
+              <div class="benefit-icon benefit-icon--compass" aria-hidden="true"></div>
+              <h3>Dokąd chcesz</h3>
+              <p>Odbiór w Szczecinie lub uzgodniony dowóz nad Zalew, jezioro albo do mariny.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="equipment section">
+        <div class="shell equipment-grid">
+          <div class="equipment-visual reveal">
+            <div class="equipment-visual__image">
+              <img
+                src="hero-efoil.webp"
+                alt="Osoba płynąca na desce eFoil nad spokojną taflą wody"
+                width="1823"
+                height="863"
+                loading="lazy"
+              >
+            </div>
+            <div class="equipment-badge">
+              <strong>90</strong>
+              <span>litrów<br>wyporności</span>
+            </div>
+            <p>Stabilna konfiguracja do nauki i spokojnego pływania.</p>
+          </div>
+
+          <div class="equipment-copy reveal">
+            <p class="eyebrow"><span></span> Twój zestaw</p>
+            <h2>Waydoo<br>Flyer EVO <em>Lite</em></h2>
+            <p class="lead">
+              Modułowy eFoil, który spakujesz do samochodu i zabierzesz na
+              aktywny weekend, urlop albo rejs.
+            </p>
+
+            <dl class="spec-list">
+              <div>
+                <dt>Napęd</dt>
+                <dd>4 kW</dd>
+              </div>
+              <div>
+                <dt>Deska</dt>
+                <dd>90 l</dd>
+              </div>
+              <div>
+                <dt>Sterowanie</dt>
+                <dd>pilot bezprzewodowy</dd>
+              </div>
+              <div>
+                <dt>Zalecana masa użytkownika</dt>
+                <dd>do ok. 90 kg</dd>
+              </div>
+            </dl>
+
+            <div class="included-line">
+              <span aria-hidden="true">✓</span>
+              <p>
+                Dostajesz kompletny zestaw: deskę, napęd, baterię, szybką
+                ładowarkę, pilot, kask i kamizelkę.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="process section" id="jak-to-dziala">
+        <div class="shell">
+          <div class="section-heading section-heading--center reveal">
+            <p class="eyebrow"><span></span> Prosty start</p>
+            <h2>Od wiadomości do <em>pierwszego lotu</em></h2>
+          </div>
+
+          <ol class="process-list">
+            <li class="process-item reveal">
+              <span class="process-number">01</span>
+              <div>
+                <h3>Wybierz termin</h3>
+                <p>Podaj liczbę dni, miejsce pływania, wagę i swoje doświadczenie.</p>
+              </div>
+            </li>
+            <li class="process-item reveal">
+              <span class="process-number">02</span>
+              <div>
+                <h3>Potwierdź szczegóły</h3>
+                <p>Ustalamy cenę, kaucję, odbiór w Szczecinie albo możliwość dowozu.</p>
+              </div>
+            </li>
+            <li class="process-item reveal">
+              <span class="process-number">03</span>
+              <div>
+                <h3>Przejdź instruktaż</h3>
+                <p>Pokażemy obsługę, start, ładowanie i najważniejsze zasady bezpieczeństwa.</p>
+              </div>
+            </li>
+            <li class="process-item reveal">
+              <span class="process-number">04</span>
+              <div>
+                <h3>Wejdź na wodę</h3>
+                <p>Odbierasz sprawdzony zestaw i korzystasz z niego przez uzgodniony czas.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="pricing section" id="cennik">
+        <div class="shell">
+          <div class="pricing-header reveal">
+            <div>
+              <p class="eyebrow eyebrow--light"><span></span> Cennik startowy</p>
+              <h2>Wybierz swój<br><em>czas nad wodą</em></h2>
+            </div>
+            <p>
+              Cena zależy od terminu, miejsca odbioru i długości wynajmu.
+              Każdą rezerwację potwierdzamy indywidualnie.
+            </p>
+          </div>
+
+          <div class="pricing-grid">
+            <article class="price-card reveal">
+              <p class="price-card__label">Pierwszy dzień</p>
+              <div class="price-card__price">
+                <strong>600–650</strong><span>zł</span>
+              </div>
+              <p>Dobry wybór, jeśli chcesz sprawdzić sprzęt albo wykorzystać jeden pełny dzień.</p>
+              <a href="#rezerwacja" data-duration-choice="1">
+                Wybieram 1 dzień <span aria-hidden="true">→</span>
+              </a>
+            </article>
+
+            <article class="price-card price-card--featured reveal">
+              <div class="price-card__tag">Najczęściej wybierany</div>
+              <p class="price-card__label">Weekend · 3 dni</p>
+              <div class="price-card__price">
+                <strong>1400–1500</strong><span>zł</span>
+              </div>
+              <p>Więcej czasu na naukę, spokojne pływanie i powtórkę następnego dnia.</p>
+              <a href="#rezerwacja" data-duration-choice="3">
+                Wybieram weekend <span aria-hidden="true">→</span>
+              </a>
+            </article>
+
+            <article class="price-card reveal">
+              <p class="price-card__label">Pełny tydzień</p>
+              <div class="price-card__price">
+                <strong>2600–2800</strong><span>zł</span>
+              </div>
+              <p>Na urlop, pobyt nad Zalewem albo jako dodatkowa atrakcja na jacht.</p>
+              <a href="#rezerwacja" data-duration-choice="7">
+                Wybieram 7 dni <span aria-hidden="true">→</span>
+              </a>
+            </article>
+          </div>
+
+          <div class="price-strip reveal">
+            <div><span>2 dni</span><strong>1050–1150 zł</strong></div>
+            <div><span>5 dni</span><strong>2200–2400 zł</strong></div>
+            <div><span>Dowóz</span><strong>wycena indywidualna</strong></div>
+            <div><span>Kaucja zwrotna</span><strong data-deposit>3 000–5 000 zł</strong></div>
+          </div>
+
+          <div class="included-panel reveal">
+            <div>
+              <p class="eyebrow eyebrow--light"><span></span> W każdej opcji</p>
+              <h3>W cenie masz wszystko,<br>czego potrzebujesz.</h3>
+            </div>
+            <ul>
+              <li><span>01</span> Kompletny eFoil</li>
+              <li><span>02</span> Bateria i szybka ładowarka</li>
+              <li><span>03</span> Pilot bezprzewodowy</li>
+              <li><span>04</span> Kask i kamizelka</li>
+              <li><span>05</span> Instruktaż przed wydaniem</li>
+              <li><span>06</span> Wsparcie podczas wynajmu</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="locations section" id="lokalizacje">
+        <div class="shell locations-grid">
+          <div class="locations-copy reveal">
+            <p class="eyebrow"><span></span> Szczecin i okolice</p>
+            <h2>Zabierz lot<br><em>nad swoją wodę.</em></h2>
+            <p class="lead">
+              Sprzęt odbierzesz w Szczecinie. Po uzgodnieniu możemy dostarczyć
+              go do mariny, nad Zalew Szczeciński albo w inne miejsce regionu.
+            </p>
+            <p class="pickup-note" data-pickup-note>
+              Szczecin — dokładne miejsce odbioru ustalamy przy rezerwacji
+            </p>
+            <a class="button button--dark" href="#rezerwacja">
+              Zapytaj o dowóz <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="area-card reveal" aria-label="Przykładowy obszar dowozu">
+            <div class="area-card__radar" aria-hidden="true">
+              <i></i><i></i><i></i>
+              <span class="radar-center"></span>
+            </div>
+            <div class="location-pin location-pin--main">
+              <span></span>
+              <strong>Szczecin</strong>
+              <small>odbiór</small>
+            </div>
+            <div class="location-pin location-pin--one"><span></span> Jezioro Dąbie</div>
+            <div class="location-pin location-pin--two"><span></span> Trzebież</div>
+            <div class="location-pin location-pin--three"><span></span> Stepnica</div>
+            <div class="location-pin location-pin--four"><span></span> Nowe Warpno</div>
+            <div class="location-pin location-pin--five"><span></span> Świnoujście</div>
+            <div class="area-card__caption">
+              <span>+</span>
+              Międzyzdroje i inne lokalizacje<br>w Zachodniopomorskiem
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="yacht section">
+        <div class="shell">
+          <div class="yacht-card reveal">
+            <div class="yacht-card__index">02 / 02</div>
+            <div class="yacht-card__copy">
+              <p class="eyebrow eyebrow--light"><span></span> Na jacht i do mariny</p>
+              <h2>Najlepszy dodatkowy<br><em>pokład na pokładzie.</em></h2>
+              <p>
+                eFoil może być atrakcją weekendowego lub tygodniowego rejsu.
+                Przed wydaniem wspólnie potwierdzimy bezpieczne przechowywanie,
+                wodowanie i możliwość ładowania z instalacji 230 V.
+              </p>
+              <a class="text-link text-link--light" href="#rezerwacja">
+                Zapytaj o wynajem na rejs <span aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="yacht-card__word" aria-hidden="true">EVO</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="safety section" id="bezpieczenstwo">
+        <div class="shell safety-grid">
+          <div class="safety-heading reveal">
+            <p class="eyebrow"><span></span> Bezpieczeństwo</p>
+            <h2>Najpierw kontrola.<br><em>Potem frajda.</em></h2>
+            <p>
+              Pierwszy wynajem wymaga instruktażu. Na wodę wychodzimy tylko
+              w odpowiednim miejscu i przy bezpiecznych warunkach.
+            </p>
+          </div>
+
+          <div class="safety-list reveal">
+            <div>
+              <span>01</span>
+              <p><strong>Kask i kamizelka zawsze</strong> — oba elementy dostajesz w zestawie.</p>
+            </div>
+            <div>
+              <span>02</span>
+              <p><strong>Odpowiednia głębokość</strong> — przyjmij minimum ok. 1,5 m, a przy falowaniu więcej.</p>
+            </div>
+            <div>
+              <span>03</span>
+              <p><strong>Z dala od ludzi</strong> — nie pływaj na kąpieliskach, torach wodnych ani w marinie.</p>
+            </div>
+            <div>
+              <span>04</span>
+              <p><strong>Sucha i chłodna bateria</strong> — nie ładuj jej mokrej ani bezpośrednio po pływaniu.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="shell safety-note reveal">
+          <strong>Ważne</strong>
+          <p>
+            Przed pływaniem sprawdź lokalne przepisy, oznakowanie akwenu,
+            pogodę i przeszkody pod wodą. Bezpieczeństwo ma pierwszeństwo
+            przed prędkością.
+          </p>
+        </div>
+      </section>
+
+      <section class="faq section" id="faq">
+        <div class="shell faq-grid">
+          <div class="faq-heading reveal">
+            <p class="eyebrow"><span></span> FAQ</p>
+            <h2>Krótko<br>i <em>konkretnie.</em></h2>
+            <p>Nie widzisz odpowiedzi? Napisz — ustalimy szczegóły przed rezerwacją.</p>
+            <a class="text-link" href="#rezerwacja">
+              Przejdź do formularza <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+
+          <div class="faq-list reveal">
+            <details>
+              <summary>
+                Czy eFoil nadaje się dla początkujących?
+                <span aria-hidden="true"></span>
+              </summary>
+              <p>
+                Tak. Nauka wymaga cierpliwości i odpowiednich warunków, dlatego
+                pierwszy wynajem zawsze zaczynamy od instruktażu. Doświadczenie
+                w sportach deskowych pomaga, ale nie jest konieczne.
+              </p>
+            </details>
+            <details>
+              <summary>
+                Czy napęd 4 kW wystarczy osobie ważącej 90 kg?
+                <span aria-hidden="true"></span>
+              </summary>
+              <p>
+                Zestaw jest zalecany dla użytkowników do około 90 kg. Osoba
+                początkująca blisko tej granicy może potrzebować spokojniejszej
+                wody i więcej czasu na pierwsze starty.
+              </p>
+            </details>
+            <details>
+              <summary>
+                Czy mogę zabrać deskę nad morze?
+                <span aria-hidden="true"></span>
+              </summary>
+              <p>
+                Tak, po wcześniejszym uzgodnieniu. Pływanie na morzu wymaga
+                odpowiednich warunków i doświadczenia, a po sesji sprzęt trzeba
+                dokładnie wypłukać słodką wodą.
+              </p>
+            </details>
+            <details>
+              <summary>
+                Czy trzeba wpłacić kaucję?
+                <span aria-hidden="true"></span>
+              </summary>
+              <p>
+                Tak. Orientacyjna kaucja zwrotna wynosi
+                <span data-deposit>3 000–5 000 zł</span>. Jej dokładną wysokość
+                i zasady zwrotu potwierdzamy przed podpisaniem umowy.
+              </p>
+            </details>
+            <details>
+              <summary>
+                Czy eFoil zmieści się w samochodzie?
+                <span aria-hidden="true"></span>
+              </summary>
+              <p>
+                Zestaw jest modułowy i po rozłożeniu mieści się w większości
+                aut z odpowiednią przestrzenią bagażową. Przed odbiorem
+                potwierdzimy wymiary i sposób zabezpieczenia elementów.
+              </p>
+            </details>
+            <details>
+              <summary>
+                Co, jeśli pogoda nie pozwoli pływać?
+                <span aria-hidden="true"></span>
+              </summary>
+              <p>
+                Bezpieczeństwo jest ważniejsze niż termin. Gdy warunki są
+                nieodpowiednie, wspólnie ustalamy inne rozwiązanie zgodnie
+                z warunkami rezerwacji.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="booking section" id="rezerwacja">
+        <div class="shell booking-grid">
+          <div class="booking-copy reveal">
+            <p class="eyebrow eyebrow--light"><span></span> Rezerwacja</p>
+            <h2>Gotowy<br><em>wznieść się?</em></h2>
+            <p>
+              Podaj termin i kilka informacji. Przygotujemy wiadomość z
+              zapytaniem, a w odpowiedzi potwierdzimy dostępność, cenę,
+              kaucję i możliwość dowozu.
+            </p>
+
+            <div class="contact-stack">
+              <a href="#rezerwacja" data-phone-link>
+                <span class="contact-stack__icon" aria-hidden="true">T</span>
+                <span>
+                  <small>Telefon</small>
+                  <strong data-phone-text>Do uzupełnienia</strong>
+                </span>
+              </a>
+              <a href="#rezerwacja" data-email-link>
+                <span class="contact-stack__icon" aria-hidden="true">@</span>
+                <span>
+                  <small>E-mail</small>
+                  <strong data-email-text>Do uzupełnienia</strong>
+                </span>
+              </a>
+            </div>
+
+            <p class="booking-copy__note">
+              Odpowiadamy najszybciej, gdy podasz termin, wagę użytkownika
+              i planowane miejsce pływania.
+            </p>
+          </div>
+
+          <form class="booking-form reveal" id="booking-form">
+            <div class="form-heading">
+              <span>Zapytanie o termin</span>
+              <small>Wypełnienie zajmuje około minuty</small>
+            </div>
+
+            <div class="form-grid">
+              <label class="field">
+                <span>Imię i nazwisko *</span>
+                <input type="text" name="name" autocomplete="name" required>
+              </label>
+
+              <label class="field">
+                <span>Telefon lub e-mail *</span>
+                <input type="text" name="contact" autocomplete="email" required>
+              </label>
+
+              <label class="field">
+                <span>Preferowany termin *</span>
+                <input type="date" name="date" id="booking-date" required>
+              </label>
+
+              <label class="field">
+                <span>Długość wynajmu *</span>
+                <select name="duration" id="duration" required>
+                  <option value="1">1 dzień</option>
+                  <option value="2">2 dni</option>
+                  <option value="3" selected>Weekend · 3 dni</option>
+                  <option value="5">5 dni</option>
+                  <option value="7">7 dni</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Waga użytkownika *</span>
+                <div class="input-suffix">
+                  <input type="number" name="weight" min="35" max="120" inputmode="numeric" required>
+                  <span>kg</span>
+                </div>
+              </label>
+
+              <label class="field">
+                <span>Doświadczenie *</span>
+                <select name="experience" required>
+                  <option value="">Wybierz</option>
+                  <option>Pierwszy raz</option>
+                  <option>Mam podstawy</option>
+                  <option>Pływam samodzielnie</option>
+                </select>
+              </label>
+
+              <label class="field field--wide">
+                <span>Planowane miejsce pływania *</span>
+                <input
+                  type="text"
+                  name="location"
+                  placeholder="np. Jezioro Dąbie, Stepnica"
+                  required
+                >
+              </label>
+
+              <label class="check-field field--wide">
+                <input type="checkbox" name="delivery">
+                <span class="check-box" aria-hidden="true"></span>
+                Potrzebuję wyceny dowozu
+              </label>
+
+              <label class="field field--wide">
+                <span>Dodatkowe informacje</span>
+                <textarea
+                  name="message"
+                  rows="3"
+                  placeholder="Napisz, co warto wiedzieć przed kontaktem"
+                ></textarea>
+              </label>
+
+              <label class="check-field check-field--consent field--wide">
+                <input type="checkbox" name="consent" required>
+                <span class="check-box" aria-hidden="true"></span>
+                <span>
+                  Zgadzam się na kontakt w sprawie zapytania. Formularz nie
+                  zapisuje danych na tej stronie. *
+                </span>
+              </label>
+            </div>
+
+            <div class="estimate" aria-live="polite">
+              <span>Orientacyjna cena wynajmu</span>
+              <strong id="estimate-price">od 1 400 zł</strong>
+              <small>Finalną cenę potwierdzamy indywidualnie.</small>
+            </div>
+
+            <button class="button button--accent button--full" type="submit">
+              Przygotuj zapytanie
+              <span aria-hidden="true">↗</span>
+            </button>
+            <p class="form-privacy">
+              Strona nie korzysta z cookies ani analityki. Po kliknięciu
+              pokażemy gotową treść i — po Twojej decyzji — otworzymy program
+              pocztowy.
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-top">
+        <a class="brand brand--footer" href="#start">
+          <span class="brand-mark" aria-hidden="true"><i></i></span>
+          <span class="brand-text">
+            <strong data-brand-name>eFoil Szczecin</strong>
+            <small>rent · ride · fly</small>
+          </span>
+        </a>
+        <p>Poczuj lot nad wodą.<br>Szczecin i Pomorze Zachodnie.</p>
+        <div class="footer-contact">
+          <a href="#rezerwacja" data-phone-link data-phone-text>Telefon do uzupełnienia</a>
+          <a href="#rezerwacja" data-email-link data-email-text>E-mail do uzupełnienia</a>
+        </div>
+      </div>
+
+      <div class="shell footer-bottom">
+        <span>© <span id="current-year"></span> <span data-brand-name>eFoil Szczecin</span></span>
+        <div>
+          <button type="button" data-dialog-open="terms-dialog">Warunki wynajmu</button>
+          <button type="button" data-dialog-open="privacy-dialog">Prywatność</button>
+        </div>
+        <a href="#start">Do góry ↑</a>
+      </div>
+    </footer>
+
+    <a class="mobile-booking-cta" href="#rezerwacja">
+      Sprawdź termin
+      <span aria-hidden="true">↗</span>
+    </a>
+
+    <dialog class="info-dialog" id="request-dialog">
+      <div class="dialog-inner">
+        <button class="dialog-close" type="button" data-dialog-close aria-label="Zamknij">×</button>
+        <p class="eyebrow"><span></span> Gotowe zapytanie</p>
+        <h2>Jeszcze jeden krok.</h2>
+        <p id="request-dialog-intro">
+          Sprawdź treść i otwórz swój program pocztowy albo skopiuj wiadomość.
+        </p>
+        <pre id="request-preview"></pre>
+        <p class="dialog-status" id="request-status" role="status"></p>
+        <div class="dialog-actions">
+          <a class="button button--dark" id="send-email-link" href="#" hidden>
+            Otwórz pocztę <span aria-hidden="true">↗</span>
+          </a>
+          <button class="button button--outline" type="button" id="copy-request">
+            Kopiuj treść
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="info-dialog" id="terms-dialog">
+      <div class="dialog-inner dialog-inner--text">
+        <button class="dialog-close" type="button" data-dialog-close aria-label="Zamknij">×</button>
+        <p class="eyebrow"><span></span> Warunki wynajmu</p>
+        <h2>Najważniejsze zasady</h2>
+        <p>
+          Pierwszy wynajem wymaga instruktażu, podpisania umowy i wpłaty
+          kaucji. Sprzęt może być używany wyłącznie zgodnie z instrukcją,
+          lokalnymi przepisami oraz zasadami bezpieczeństwa.
+        </p>
+        <ul>
+          <li>Obowiązkowe używanie kasku i kamizelki.</li>
+          <li>Zakaz pływania po alkoholu, na kąpieliskach i torach wodnych.</li>
+          <li>Odpowiedzialność za sprzęt określa umowa i protokół wydania.</li>
+          <li>Cenę, kaucję, dowóz i zasady anulowania potwierdzamy przed rezerwacją.</li>
+        </ul>
+        <p class="dialog-footnote">
+          To informacyjny skrót. Pełny regulamin i umowę otrzymasz przed
+          potwierdzeniem wynajmu.
+        </p>
+      </div>
+    </dialog>
+
+    <dialog class="info-dialog" id="privacy-dialog">
+      <div class="dialog-inner dialog-inner--text">
+        <button class="dialog-close" type="button" data-dialog-close aria-label="Zamknij">×</button>
+        <p class="eyebrow"><span></span> Prywatność</p>
+        <h2>Jak działa formularz</h2>
+        <p>
+          Ta statyczna strona nie używa cookies, analityki ani zewnętrznego
+          systemu formularzy. Wpisane dane pozostają w Twojej przeglądarce.
+          Po zatwierdzeniu tworzona jest treść wiadomości, którą możesz wysłać
+          ze swojego programu pocztowego.
+        </p>
+        <p>
+          Dane wysłane e-mailem będą wykorzystane wyłącznie do odpowiedzi
+          na zapytanie i obsługi ewentualnej rezerwacji. Kontakt:
+          <strong data-email-text>e-mail do uzupełnienia</strong>.
+        </p>
+      </div>
+    </dialog>
+
+    <noscript>
+      <div class="noscript-note">
+        Ta strona wymaga JavaScript do działania formularza rezerwacyjnego.
+        Pozostała treść jest nadal dostępna.
+      </div>
+    </noscript>
+  </body>
+</html>
