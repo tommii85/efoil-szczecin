@@ -1569,6 +1569,88 @@ h2 em {
   color: var(--ink-soft);
 }
 
+.footer-partner {
+  display: grid;
+  grid-template-columns: 136px minmax(230px, 0.65fr) minmax(320px, 1.35fr);
+  align-items: center;
+  padding: 28px 0;
+  gap: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-partner__mark {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  min-height: 72px;
+  gap: 3px;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.footer-partner__mark span {
+  font-size: 13px;
+  font-weight: 760;
+  letter-spacing: -0.04em;
+}
+
+.footer-partner__mark strong {
+  color: var(--acid);
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.07em;
+}
+
+.footer-partner__copy > span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--acid);
+  font-size: 9px;
+  font-weight: 780;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.footer-partner__copy p {
+  margin: 0;
+  color: var(--white);
+  font-size: 20px;
+  font-weight: 720;
+  letter-spacing: -0.035em;
+}
+
+.footer-partner > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 54px;
+  padding: 0 18px;
+  gap: 24px;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.footer-partner > a:hover {
+  color: var(--navy);
+  background: var(--acid);
+  border-color: var(--acid);
+}
+
+.footer-partner > a span {
+  font-size: 18px;
+}
+
 .booking {
   position: relative;
   overflow: hidden;
@@ -2314,6 +2396,15 @@ h2 em {
     position: static;
   }
 
+  .footer-partner {
+    grid-template-columns: 120px 1fr;
+    gap: 24px;
+  }
+
+  .footer-partner > a {
+    grid-column: 2;
+  }
+
   .booking-grid {
     gap: 60px;
   }
@@ -2628,6 +2719,22 @@ h2 em {
   .faq-list details > p {
     margin-right: 0;
     font-size: 14px;
+  }
+
+  .footer-partner {
+    grid-template-columns: 1fr;
+    padding: 26px 0;
+    gap: 18px;
+  }
+
+  .footer-partner__mark {
+    width: 100%;
+    min-height: 64px;
+  }
+
+  .footer-partner > a {
+    grid-column: auto;
+    width: 100%;
   }
 
   .booking-form {
