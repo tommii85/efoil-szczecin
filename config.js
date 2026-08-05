@@ -15,7 +15,7 @@ window.EFOIL_CONFIG = {
   whatsapp: "",
 
   pickupNote: "Szczecin — dokładne miejsce odbioru ustalamy przy rezerwacji",
-  deposit: "3 000–5 000 zł",
+  deposit: "3 000 zł",
 
   // Ostateczny cennik wynajmu używany na stronie i w formularzu.
   prices: {
