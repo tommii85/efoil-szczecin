@@ -6,10 +6,10 @@ window.EFOIL_CONFIG = {
   brandName: "eFoil Szczecin",
 
   // Przykład telefonu: "+48 501 234 567"
-  phone: "",
+  phone: "+48 660 479 286",
 
   // Przykład e-maila: "rezerwacje@twojadomena.pl"
-  email: "",
+  email: "info@efoilszczecin.pl",
 
   // Opcjonalnie, same cyfry z kodem kraju, np. "48501234567"
   whatsapp: "",
