@@ -1848,21 +1848,12 @@ h2 em {
   color: #8a999d;
 }
 
-.input-suffix {
-  position: relative;
-}
-
-.input-suffix input {
-  padding-right: 42px;
-}
-
-.input-suffix span {
+.honey-field {
   position: absolute;
-  top: 50%;
-  right: 13px;
-  color: var(--ink-soft);
-  font-size: 12px;
-  transform: translateY(-50%);
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 .check-field {
@@ -1953,6 +1944,29 @@ h2 em {
   font-size: 9px;
   line-height: 1.45;
   text-align: center;
+}
+
+.booking-form .button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+  transform: none;
+}
+
+.form-status {
+  min-height: 22px;
+  margin: 11px 0 0;
+  font-size: 11px;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.form-status.is-sending,
+.form-status.is-success {
+  color: var(--teal-dark);
+}
+
+.form-status.is-error {
+  color: #9f342f;
 }
 
 .site-footer {
@@ -2058,35 +2072,13 @@ h2 em {
   line-height: 1;
 }
 
-.dialog-inner > p:not(.eyebrow, .dialog-status, .dialog-footnote) {
+.dialog-inner > p:not(.eyebrow, .dialog-footnote) {
   color: var(--ink-soft);
 }
 
-#request-preview {
-  max-height: 280px;
-  margin: 25px 0 15px;
-  padding: 18px;
-  overflow: auto;
-  white-space: pre-wrap;
-  color: var(--ink);
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 7px;
-  font: 12px/1.6 ui-monospace, SFMono-Regular, Consolas, monospace;
-}
-
-.dialog-actions {
-  display: flex;
-  margin-top: 20px;
-  gap: 10px;
-}
-
-.dialog-status {
-  min-height: 22px;
-  margin: 0;
+.dialog-inner a {
   color: var(--teal-dark);
-  font-size: 11px;
-  font-weight: 700;
+  font-weight: 750;
 }
 
 .dialog-inner--text ul {
@@ -2843,13 +2835,6 @@ h2 em {
     padding: 38px 22px 25px;
   }
 
-  .dialog-actions {
-    flex-direction: column;
-  }
-
-  .dialog-actions .button {
-    width: 100%;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

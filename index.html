@@ -308,7 +308,7 @@
               <span class="process-number">02</span>
               <div>
                 <h3>Potwierdź szczegóły</h3>
-                <p>Ustalamy cenę, kaucję, odbiór w Szczecinie albo możliwość dowozu.</p>
+                <p>Potwierdzamy pakiet, kaucję, odbiór w Szczecinie albo możliwość dowozu.</p>
               </div>
             </li>
             <li class="process-item reveal">
@@ -333,12 +333,12 @@
         <div class="shell">
           <div class="pricing-header reveal">
             <div>
-              <p class="eyebrow eyebrow--light"><span></span> Cennik startowy</p>
+              <p class="eyebrow eyebrow--light"><span></span> Cennik wynajmu</p>
               <h2>Wybierz swój<br><em>czas nad wodą</em></h2>
             </div>
             <p>
-              Cena zależy od terminu, miejsca odbioru i długości wynajmu.
-              Każdą rezerwację potwierdzamy indywidualnie.
+              Stała cena obejmuje kompletny zestaw, wyposażenie ochronne
+              i instruktaż. Dostępność terminu potwierdzamy indywidualnie.
             </p>
           </div>
 
@@ -346,7 +346,7 @@
             <article class="price-card reveal">
               <p class="price-card__label">Pierwszy dzień</p>
               <div class="price-card__price">
-                <strong>600–650</strong><span>zł</span>
+                <strong>600</strong><span>zł</span>
               </div>
               <p>Dobry wybór, jeśli chcesz sprawdzić sprzęt albo wykorzystać jeden pełny dzień.</p>
               <a href="#rezerwacja" data-duration-choice="1">
@@ -358,7 +358,7 @@
               <div class="price-card__tag">Najczęściej wybierany</div>
               <p class="price-card__label">Weekend · 3 dni</p>
               <div class="price-card__price">
-                <strong>1400–1500</strong><span>zł</span>
+                <strong>1 400</strong><span>zł</span>
               </div>
               <p>Więcej czasu na naukę, spokojne pływanie i powtórkę następnego dnia.</p>
               <a href="#rezerwacja" data-duration-choice="3">
@@ -369,7 +369,7 @@
             <article class="price-card reveal">
               <p class="price-card__label">Pełny tydzień</p>
               <div class="price-card__price">
-                <strong>2600–2800</strong><span>zł</span>
+                <strong>2 500</strong><span>zł</span>
               </div>
               <p>Na urlop, pobyt nad Zalewem albo jako dodatkowa atrakcja na jacht.</p>
               <a href="#rezerwacja" data-duration-choice="7">
@@ -379,8 +379,8 @@
           </div>
 
           <div class="price-strip reveal">
-            <div><span>2 dni</span><strong>1050–1150 zł</strong></div>
-            <div><span>5 dni</span><strong>2200–2400 zł</strong></div>
+            <div><span>2 dni</span><strong>1 050 zł</strong></div>
+            <div><span>5 dni</span><strong>2 000 zł</strong></div>
             <div><span>Dowóz</span><strong>wycena indywidualna</strong></div>
             <div><span>Kaucja zwrotna</span><strong data-deposit>3 000–5 000 zł</strong></div>
           </div>
@@ -592,8 +592,8 @@
             <p class="eyebrow eyebrow--light"><span></span> Rezerwacja</p>
             <h2>Gotowy<br><em>wznieść się?</em></h2>
             <p>
-              Podaj termin i kilka informacji. Przygotujemy wiadomość z
-              zapytaniem, a w odpowiedzi potwierdzimy dostępność, cenę,
+              Podaj termin i kilka informacji. Formularz wyśle zapytanie
+              bezpośrednio do nas, a w odpowiedzi potwierdzimy dostępność,
               kaucję i możliwość dowozu.
             </p>
 
@@ -615,16 +615,33 @@
             </div>
 
             <p class="booking-copy__note">
-              Odpowiadamy najszybciej, gdy podasz termin, wagę użytkownika
+              Odpowiadamy najszybciej, gdy podasz termin, doświadczenie
               i planowane miejsce pływania.
             </p>
           </div>
 
-          <form class="booking-form reveal" id="booking-form">
+          <form
+            class="booking-form reveal"
+            id="booking-form"
+            action="https://formsubmit.co/info@efoilszczecin.pl"
+            method="POST"
+          >
             <div class="form-heading">
               <span>Zapytanie o termin</span>
               <small>Wypełnienie zajmuje około minuty</small>
             </div>
+
+            <input type="hidden" name="_subject" value="Nowe zapytanie — eFoil Szczecin">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input
+              class="honey-field"
+              type="text"
+              name="_honey"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true"
+            >
 
             <div class="form-grid">
               <label class="field">
@@ -651,14 +668,6 @@
                   <option value="5">5 dni</option>
                   <option value="7">7 dni</option>
                 </select>
-              </label>
-
-              <label class="field">
-                <span>Waga użytkownika *</span>
-                <div class="input-suffix">
-                  <input type="number" name="weight" min="35" max="120" inputmode="numeric" required>
-                  <span>kg</span>
-                </div>
               </label>
 
               <label class="field">
@@ -700,26 +709,27 @@
                 <input type="checkbox" name="consent" required>
                 <span class="check-box" aria-hidden="true"></span>
                 <span>
-                  Zgadzam się na kontakt w sprawie zapytania. Formularz nie
-                  zapisuje danych na tej stronie. *
+                  Zgadzam się na kontakt w sprawie zapytania i przesłanie
+                  danych przez usługę obsługującą formularz. *
                 </span>
               </label>
             </div>
 
             <div class="estimate" aria-live="polite">
-              <span>Orientacyjna cena wynajmu</span>
-              <strong id="estimate-price">od 1 400 zł</strong>
-              <small>Finalną cenę potwierdzamy indywidualnie.</small>
+              <span>Cena wynajmu</span>
+              <strong id="estimate-price">1 400 zł</strong>
+              <small>Dowóz, jeśli jest potrzebny, wyceniamy osobno.</small>
             </div>
 
-            <button class="button button--accent button--full" type="submit">
-              Przygotuj zapytanie
+            <button class="button button--accent button--full" id="booking-submit" type="submit">
+              Wyślij zapytanie
               <span aria-hidden="true">↗</span>
             </button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
             <p class="form-privacy">
-              Strona nie korzysta z cookies ani analityki. Po kliknięciu
-              pokażemy gotową treść i — po Twojej decyzji — otworzymy program
-              pocztowy.
+              Strona nie korzysta z analityki. Po wysłaniu dane zostaną
+              przekazane przez FormSubmit na adres eFoil Szczecin — bez
+              otwierania programu pocztowego.
             </p>
           </form>
         </div>
@@ -776,27 +786,6 @@
       <span aria-hidden="true">↗</span>
     </a>
 
-    <dialog class="info-dialog" id="request-dialog">
-      <div class="dialog-inner">
-        <button class="dialog-close" type="button" data-dialog-close aria-label="Zamknij">×</button>
-        <p class="eyebrow"><span></span> Gotowe zapytanie</p>
-        <h2>Jeszcze jeden krok.</h2>
-        <p id="request-dialog-intro">
-          Sprawdź treść i otwórz swój program pocztowy albo skopiuj wiadomość.
-        </p>
-        <pre id="request-preview"></pre>
-        <p class="dialog-status" id="request-status" role="status"></p>
-        <div class="dialog-actions">
-          <a class="button button--dark" id="send-email-link" href="#" hidden>
-            Otwórz pocztę <span aria-hidden="true">↗</span>
-          </a>
-          <button class="button button--outline" type="button" id="copy-request">
-            Kopiuj treść
-          </button>
-        </div>
-      </div>
-    </dialog>
-
     <dialog class="info-dialog" id="terms-dialog">
       <div class="dialog-inner dialog-inner--text">
         <button class="dialog-close" type="button" data-dialog-close aria-label="Zamknij">×</button>
@@ -811,7 +800,7 @@
           <li>Obowiązkowe używanie kasku i kamizelki.</li>
           <li>Zakaz pływania po alkoholu, na kąpieliskach i torach wodnych.</li>
           <li>Odpowiedzialność za sprzęt określa umowa i protokół wydania.</li>
-          <li>Cenę, kaucję, dowóz i zasady anulowania potwierdzamy przed rezerwacją.</li>
+          <li>Kaucję, dowóz i zasady anulowania potwierdzamy przed rezerwacją.</li>
         </ul>
         <p class="dialog-footnote">
           To informacyjny skrót. Pełny regulamin i umowę otrzymasz przed
@@ -826,15 +815,20 @@
         <p class="eyebrow"><span></span> Prywatność</p>
         <h2>Jak działa formularz</h2>
         <p>
-          Ta statyczna strona nie używa cookies, analityki ani zewnętrznego
-          systemu formularzy. Wpisane dane pozostają w Twojej przeglądarce.
-          Po zatwierdzeniu tworzona jest treść wiadomości, którą możesz wysłać
-          ze swojego programu pocztowego.
+          Ta strona nie używa analityki. Po kliknięciu „Wyślij zapytanie”
+          podane dane są przekazywane do usługi FormSubmit, która dostarcza je
+          e-mailem do eFoil Szczecin. Zgodnie z informacją dostawcy zgłoszenia
+          mogą być przechowywane przez maksymalnie 30 dni.
         </p>
         <p>
-          Dane wysłane e-mailem będą wykorzystane wyłącznie do odpowiedzi
-          na zapytanie i obsługi ewentualnej rezerwacji. Kontakt:
+          Dane będą wykorzystane wyłącznie do odpowiedzi na zapytanie i obsługi
+          ewentualnej rezerwacji. Kontakt:
           <strong data-email-text>e-mail do uzupełnienia</strong>.
+        </p>
+        <p>
+          <a href="https://formsubmit.co/privacy" target="_blank" rel="noopener">
+            Informacje o prywatności FormSubmit ↗
+          </a>
         </p>
       </div>
     </dialog>

@@ -17,12 +17,12 @@ window.EFOIL_CONFIG = {
   pickupNote: "Szczecin — dokładne miejsce odbioru ustalamy przy rezerwacji",
   deposit: "3 000–5 000 zł",
 
-  // Cennik startowy. Wartości „from” są używane w kalkulatorze zapytania.
+  // Ostateczny cennik wynajmu używany na stronie i w formularzu.
   prices: {
-    1: { from: 600, to: 650, label: "1 dzień" },
-    2: { from: 1050, to: 1150, label: "2 dni" },
-    3: { from: 1400, to: 1500, label: "Weekend · 3 dni" },
-    5: { from: 2200, to: 2400, label: "5 dni" },
-    7: { from: 2600, to: 2800, label: "7 dni" }
+    1: { amount: 600, label: "1 dzień" },
+    2: { amount: 1050, label: "2 dni" },
+    3: { amount: 1400, label: "Weekend · 3 dni" },
+    5: { amount: 2000, label: "5 dni" },
+    7: { amount: 2500, label: "7 dni" }
   }
 };

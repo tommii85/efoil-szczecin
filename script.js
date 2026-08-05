@@ -8,14 +8,9 @@
   const bookingForm = document.getElementById("booking-form");
   const durationSelect = document.getElementById("duration");
   const estimatePrice = document.getElementById("estimate-price");
-  const requestDialog = document.getElementById("request-dialog");
-  const requestPreview = document.getElementById("request-preview");
-  const requestStatus = document.getElementById("request-status");
-  const requestDialogIntro = document.getElementById("request-dialog-intro");
-  const sendEmailLink = document.getElementById("send-email-link");
-  const copyRequestButton = document.getElementById("copy-request");
+  const formStatus = document.getElementById("form-status");
+  const formSubmitButton = document.getElementById("booking-submit");
   const mobileBookingCta = document.querySelector(".mobile-booking-cta");
-  let currentRequest = "";
 
   const isMissing = (value) => {
     if (!value || typeof value !== "string") return true;
@@ -189,14 +184,14 @@
 
   function getPrice(duration) {
     const price = config.prices && config.prices[duration];
-    if (!price || typeof price.from !== "number") return null;
+    if (!price || typeof price.amount !== "number") return null;
     return price;
   }
 
   function updateEstimate() {
     const price = getPrice(durationSelect.value);
     estimatePrice.textContent = price
-      ? `od ${formatPrice(price.from)} zł`
+      ? `${formatPrice(price.amount)} zł`
       : "wycena indywidualna";
   }
 
@@ -225,7 +220,7 @@
     const duration = formData.get("duration");
     const price = getPrice(duration);
     const priceLine = price
-      ? `${formatPrice(price.from)}–${formatPrice(price.to)} zł`
+      ? `${formatPrice(price.amount)} zł`
       : "do indywidualnej wyceny";
 
     return [
@@ -237,14 +232,13 @@
       `Kontakt: ${formData.get("contact")}`,
       `Preferowany termin: ${formData.get("date")}`,
       `Długość wynajmu: ${duration} ${duration === "1" ? "dzień" : "dni"}`,
-      `Orientacyjna cena z cennika: ${priceLine}`,
-      `Waga użytkownika: ${formData.get("weight")} kg`,
+      `Cena z cennika: ${priceLine}`,
       `Doświadczenie: ${formData.get("experience")}`,
       `Planowane miejsce: ${formData.get("location")}`,
       `Dowóz: ${formData.get("delivery") ? "tak, proszę o wycenę" : "nie / do ustalenia"}`,
       `Dodatkowe informacje: ${formData.get("message") || "brak"}`,
       "",
-      "Proszę o potwierdzenie terminu, ceny, kaucji i warunków odbioru.",
+      "Proszę o potwierdzenie terminu, kaucji i warunków odbioru.",
       "",
       "Pozdrawiam"
     ].join("\n");
@@ -288,60 +282,92 @@
     });
   }
 
-  async function copyRequest() {
-    requestStatus.textContent = "";
-    try {
-      await navigator.clipboard.writeText(currentRequest);
-      requestStatus.textContent = "Treść została skopiowana.";
-      copyRequestButton.textContent = "Skopiowano ✓";
-      window.setTimeout(() => {
-        copyRequestButton.textContent = "Kopiuj treść";
-      }, 1800);
-    } catch (_error) {
-      const helper = document.createElement("textarea");
-      helper.value = currentRequest;
-      helper.style.position = "fixed";
-      helper.style.opacity = "0";
-      document.body.appendChild(helper);
-      helper.select();
-      const copied = document.execCommand("copy");
-      helper.remove();
-      requestStatus.textContent = copied
-        ? "Treść została skopiowana."
-        : "Nie udało się skopiować. Zaznacz treść powyżej ręcznie.";
-    }
+  function setFormStatus(message, state = "") {
+    formStatus.textContent = message;
+    formStatus.className = "form-status";
+    if (state) formStatus.classList.add(`is-${state}`);
   }
 
   function configureBookingForm() {
     setMinimumDate();
+    const defaultButtonContent = formSubmitButton.innerHTML;
 
-    bookingForm.addEventListener("submit", (event) => {
+    bookingForm.addEventListener("submit", async (event) => {
       event.preventDefault();
       if (!bookingForm.reportValidity()) return;
 
       const formData = new FormData(bookingForm);
-      currentRequest = buildRequest(formData);
-      requestPreview.textContent = currentRequest;
-      requestStatus.textContent = "";
-
-      if (hasEmail) {
-        const subject = encodeURIComponent(
-          `Zapytanie o eFoil — ${formData.get("date")}, ${formData.get("duration")} dni`
-        );
-        sendEmailLink.href = `mailto:${config.email}?subject=${subject}&body=${encodeURIComponent(currentRequest)}`;
-        sendEmailLink.hidden = false;
-        requestDialogIntro.textContent =
-          "Sprawdź treść i otwórz swój program pocztowy albo skopiuj wiadomość.";
-      } else {
-        sendEmailLink.hidden = true;
-        requestDialogIntro.textContent =
-          "Dane kontaktowe właściciela nie są jeszcze skonfigurowane. Możesz skopiować gotową treść wiadomości.";
+      if (formData.get("_honey")) {
+        bookingForm.reset();
+        updateEstimate();
+        setFormStatus("Dziękujemy! Zapytanie zostało wysłane.", "success");
+        return;
       }
 
-      openDialog(requestDialog);
-    });
+      if (!hasEmail) {
+        setFormStatus("Wysyłka formularza nie jest jeszcze skonfigurowana.", "error");
+        return;
+      }
 
-    copyRequestButton.addEventListener("click", copyRequest);
+      const duration = formData.get("duration");
+      const durationLabel = duration === "1" ? "1 dzień" : `${duration} dni`;
+      const price = getPrice(duration);
+      const requestText = buildRequest(formData);
+      const payload = {
+        _subject: `Zapytanie o eFoil — ${formData.get("date")}, ${durationLabel}`,
+        _template: "table",
+        _captcha: "false",
+        _url: window.location.href.split("#")[0],
+        "Imię i nazwisko": formData.get("name"),
+        Kontakt: formData.get("contact"),
+        "Preferowany termin": formData.get("date"),
+        "Długość wynajmu": durationLabel,
+        "Cena z cennika": price ? `${formatPrice(price.amount)} zł` : "wycena indywidualna",
+        Doświadczenie: formData.get("experience"),
+        "Planowane miejsce": formData.get("location"),
+        Dowóz: formData.get("delivery") ? "tak, proszę o wycenę" : "nie / do ustalenia",
+        "Dodatkowe informacje": formData.get("message") || "brak",
+        "Zgoda na kontakt": "tak",
+        "Treść zapytania": requestText
+      };
+
+      formSubmitButton.disabled = true;
+      formSubmitButton.setAttribute("aria-busy", "true");
+      formSubmitButton.textContent = "Wysyłanie…";
+      setFormStatus("Wysyłamy Twoje zapytanie…", "sending");
+
+      try {
+        const response = await fetch(
+          `https://formsubmit.co/ajax/${config.email}`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json"
+            },
+            body: JSON.stringify(payload)
+          }
+        );
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok || result.success === false || result.success === "false") {
+          throw new Error("FormSubmit odrzucił zapytanie");
+        }
+
+        bookingForm.reset();
+        updateEstimate();
+        setFormStatus(
+          "Dziękujemy! Zapytanie zostało wysłane. Odpowiemy w sprawie dostępności.",
+          "success"
+        );
+      } catch (_error) {
+        const fallback = hasPhone ? ` lub zadzwoń: ${config.phone}` : "";
+        setFormStatus(`Nie udało się wysłać. Spróbuj ponownie${fallback}.`, "error");
+      } finally {
+        formSubmitButton.disabled = false;
+        formSubmitButton.removeAttribute("aria-busy");
+        formSubmitButton.innerHTML = defaultButtonContent;
+      }
+    });
   }
 
   function configureMobileCta() {
