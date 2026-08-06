@@ -167,6 +167,33 @@
     elements.forEach((element) => revealObserver.observe(element));
   }
 
+  function configureVideos() {
+    document.querySelectorAll("[data-video-player]").forEach((player) => {
+      const trigger = player.querySelector("[data-video-trigger]");
+      if (!trigger) return;
+
+      trigger.addEventListener(
+        "click",
+        (event) => {
+          const videoId = player.dataset.videoId;
+          const title = player.dataset.videoTitle || "Film Waydoo Flyer EVO";
+          if (!/^[\w-]{11}$/.test(videoId)) return;
+          event.preventDefault();
+
+          const iframe = document.createElement("iframe");
+          iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
+          iframe.title = title;
+          iframe.allow =
+            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+          iframe.referrerPolicy = "strict-origin-when-cross-origin";
+          iframe.allowFullscreen = true;
+          player.replaceChildren(iframe);
+        },
+        { once: true }
+      );
+    });
+  }
+
   function configureFaq() {
     const details = [...document.querySelectorAll(".faq-list details")];
     details.forEach((item) => {
@@ -387,6 +414,7 @@
 
   configureContent();
   configureNavigation();
+  configureVideos();
   configureReveals();
   configureFaq();
   configurePricing();
