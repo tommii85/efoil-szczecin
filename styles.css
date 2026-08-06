@@ -1634,33 +1634,42 @@ h2 em {
   text-transform: uppercase;
 }
 
-.footer-partner__mark {
+.footer-partner__logo {
   display: flex;
-  align-items: baseline;
-  margin-top: 12px;
-  gap: 2px;
+  align-items: center;
+  width: fit-content;
+  margin-top: 14px;
+  gap: 12px;
   color: var(--white);
+  transition: transform 0.25s ease;
+}
+
+.footer-partner__logo:hover {
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.footer-partner__logo img {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+}
+
+.footer-partner__wordmark {
+  display: inline-flex;
+  color: var(--white);
+  font-family: Inter, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   line-height: 1;
+  text-transform: uppercase;
 }
 
-.footer-partner__mark span {
-  font-size: 30px;
-  font-weight: 760;
-  letter-spacing: -0.07em;
-}
-
-.footer-partner__mark strong {
-  color: var(--acid);
-  font-size: 40px;
+.footer-partner__wordmark strong {
+  color: #38bdf8;
   font-weight: 800;
-  letter-spacing: -0.09em;
-}
-
-.footer-partner__mark small {
-  margin-left: 2px;
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 12px;
-  font-weight: 750;
 }
 
 .footer-partner__copy h2 {
@@ -2847,7 +2856,7 @@ h2 em {
     gap: 18px;
   }
 
-  .footer-partner__mark {
+  .footer-partner__logo {
     margin-top: 10px;
   }
 
